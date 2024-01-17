@@ -14,7 +14,7 @@ export default function CustomerData() {
     const [searchQuery, setSearchQuery] = useState('');
 
     async function customerData() {
-        const res = await axios.get("http://localhost:5000/customer/customer")
+        const res = await axios.get(`${process.env.BASE_URL}/customer/customer`)
         setData(res.data.customer)
     };
 
@@ -24,7 +24,7 @@ export default function CustomerData() {
             showCancelButton: true, confirmButtonColor: 'black', cancelButtonColor: 'grey', confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/customer/delete/${id}`)
+                axios.delete(`${process.env.BASE_URL}/customer/delete/${id}`)
                     .then((res) => {
                         Swal.fire({
                             title: 'Deleted', text: "Your file has been deleted", icon: 'success',

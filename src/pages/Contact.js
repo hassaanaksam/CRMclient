@@ -24,7 +24,7 @@ export default function Contact() {
 
   const handleSubmit = (values) => {
 
-    axios.post("http://localhost:5000/contact/contact", values, {
+    axios.post(`${process.env.BASE_URL}/contact/contact`, values, {
       headers: {
         "Content-Type": "application/json"
       }

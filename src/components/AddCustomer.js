@@ -24,7 +24,7 @@ export default function Customer() {
     };
 
     const handleSubmit = (values) => {
-        axios.post("http://localhost:5000/customer/signup", values, {
+        axios.post(`${process.env.BASE_URL}/customer/signup`, values, {
             headers: {
                 "Content-Type": "application/json"
             }

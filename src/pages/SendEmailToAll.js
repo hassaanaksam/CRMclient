@@ -13,7 +13,7 @@ export default function SendEmailToAll() {
 
     const handleSubmit = (values) => {
         values.to = emails;          // to field assigned emails here
-        axios.post(`http://localhost:5000/customer/sendemails`, values, {
+        axios.post(`${process.env.BASE_URL}/customer/sendemails`, values, {
             headers: {
                 "Content-Type": "application/json"
             }

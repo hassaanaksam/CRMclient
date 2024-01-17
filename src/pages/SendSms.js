@@ -23,7 +23,7 @@ export default function SendSms() {
 
   const handleSubmit = (values) => {
 
-    axios.post(`http://localhost:5000/customer/sendsms`, values, {
+    axios.post(`${process.env.BASE_URL}/customer/sendsms`, values, {
       headers: {
         "Content-Type": "application/json"
       }

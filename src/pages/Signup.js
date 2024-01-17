@@ -31,7 +31,7 @@ export default function Singup() {
 
   const handleSubmit = (values) => {
     console.log(values)
-    axios.post("http://localhost:5000/user/signup", values, {
+    axios.post(`${process.env.BASE_URL}/user/signup`, values, {
       headers: {
         "Content-Type": "application/json"
       }

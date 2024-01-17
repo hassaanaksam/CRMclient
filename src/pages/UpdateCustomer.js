@@ -26,7 +26,7 @@ export default function UpdateCustomer() {
     };
 
     const handleSubmit = (values) => {
-        axios.put(`http://localhost:5000/customer/customer/${customerId}`, values, {
+        axios.put(`${process.env.BASE_URL}/customer/customer/${customerId}`, values, {
             headers: {
                 "Content-Type": "application/json"
             }

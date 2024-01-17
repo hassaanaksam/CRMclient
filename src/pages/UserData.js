@@ -13,7 +13,7 @@ export default function UserData() {
     const [searchQuery, setSearchQuery] = useState('');
 
     async function userData() {
-        const response = await axios.get("http://localhost:5000/user/user")
+        const response = await axios.get(`${process.env.BASE_URL}/user/user`)
         setData(response.data.user)
     }
 
@@ -28,7 +28,7 @@ export default function UserData() {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/user/delete/${id}`)
+                axios.delete(`${process.env.BASE_URL}/user/delete/${id}`)
                     .then((res) => {
                         Swal.fire({
                             title: 'Deleted',

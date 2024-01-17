@@ -26,7 +26,7 @@ export default function SendEmail() {
 
   const handleSubmit = (values) => {
 
-    axios.post(`http://localhost:5000/customer/sendemail`, values, {
+    axios.post(`${process.env.BASE_URL}/customer/sendemail`, values, {
       headers: {
         "Content-Type": "application/json"
       }
