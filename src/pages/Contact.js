@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import axios from 'axios';
 import { useRef } from 'react';
 import Footer from '../components/Footer'
+import BASE_URL from '../components/BaseUrl'
 
 export default function Contact() {
 
@@ -24,7 +25,7 @@ export default function Contact() {
 
   const handleSubmit = (values) => {
 
-    axios.post(`${process.env.BASE_URL}/contact/contact`, values, {
+    axios.post(`${BASE_URL}/contact/contact`, values, {
       headers: {
         "Content-Type": "application/json"
       }

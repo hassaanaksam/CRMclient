@@ -6,6 +6,7 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Butto
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Footer from '../components/Footer'
+import BASE_URL from '../components/BaseUrl'
 
 export default function CustomerData() {
 
@@ -14,7 +15,7 @@ export default function CustomerData() {
     const [searchQuery, setSearchQuery] = useState('');
 
     async function customerData() {
-        const res = await axios.get(`${process.env.BASE_URL}/customer/customer`)
+        const res = await axios.get(`${BASE_URL}/customer/customer`)
         setData(res.data.customer)
     };
 
@@ -24,7 +25,7 @@ export default function CustomerData() {
             showCancelButton: true, confirmButtonColor: 'black', cancelButtonColor: 'grey', confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`${process.env.BASE_URL}/customer/delete/${id}`)
+                axios.delete(`${BASE_URL}/customer/delete/${id}`)
                     .then((res) => {
                         Swal.fire({
                             title: 'Deleted', text: "Your file has been deleted", icon: 'success',

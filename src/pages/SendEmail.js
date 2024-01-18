@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import Footer from '../components/Footer'
+import BASE_URL from '../components/BaseUrl'
 
 export default function SendEmail() {
 
@@ -26,7 +27,7 @@ export default function SendEmail() {
 
   const handleSubmit = (values) => {
 
-    axios.post(`${process.env.BASE_URL}/customer/sendemail`, values, {
+    axios.post(`${BASE_URL}/customer/sendemail`, values, {
       headers: {
         "Content-Type": "application/json"
       }

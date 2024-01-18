@@ -5,6 +5,7 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Butto
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer'
+import BASE_URL from '../components/BaseUrl'
 
 export default function UserData() {
 
@@ -13,7 +14,7 @@ export default function UserData() {
     const [searchQuery, setSearchQuery] = useState('');
 
     async function userData() {
-        const response = await axios.get(`${process.env.BASE_URL}/user/user`)
+        const response = await axios.get(`${BASE_URL}/user/user`)
         setData(response.data.user)
     }
 
@@ -28,7 +29,7 @@ export default function UserData() {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`${process.env.BASE_URL}/user/delete/${id}`)
+                axios.delete(`${BASE_URL}/user/delete/${id}`)
                     .then((res) => {
                         Swal.fire({
                             title: 'Deleted',

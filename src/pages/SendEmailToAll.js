@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import axios from 'axios';
 import { useState, useRef, useEffect } from 'react';
 import Footer from '../components/Footer'
+import BASE_URL from '../components/BaseUrl'
 
 export default function SendEmailToAll() {
 
@@ -13,7 +14,7 @@ export default function SendEmailToAll() {
 
     const handleSubmit = (values) => {
         values.to = emails;          // to field assigned emails here
-        axios.post(`${process.env.BASE_URL}/customer/sendemails`, values, {
+        axios.post(`${BASE_URL}/customer/sendemails`, values, {
             headers: {
                 "Content-Type": "application/json"
             }
@@ -38,7 +39,7 @@ export default function SendEmailToAll() {
     };
 
     useEffect(() => {
-        axios.get('http://localhost:5000/customer/allemails')
+        axios.get(`${BASE_URL}/customer/allemails`)
             .then(response => {
                 setEmails(response.data);
             })

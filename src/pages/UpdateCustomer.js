@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import { useNavigate, useParams } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer'
+import BASE_URL from '../components/BaseUrl'
 
 export default function UpdateCustomer() {
 
@@ -26,7 +27,7 @@ export default function UpdateCustomer() {
     };
 
     const handleSubmit = (values) => {
-        axios.put(`${process.env.BASE_URL}/customer/customer/${customerId}`, values, {
+        axios.put(`${BASE_URL}/customer/customer/${customerId}`, values, {
             headers: {
                 "Content-Type": "application/json"
             }

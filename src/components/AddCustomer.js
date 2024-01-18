@@ -5,6 +5,7 @@ import axios from 'axios';
 import NavBar from './NavBar';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import BASE_URL from './BaseUrl'
 
 export default function Customer() {
 
@@ -24,7 +25,7 @@ export default function Customer() {
     };
 
     const handleSubmit = (values) => {
-        axios.post(`${process.env.BASE_URL}/customer/signup`, values, {
+        axios.post(`${BASE_URL}/customer/signup`, values, {
             headers: {
                 "Content-Type": "application/json"
             }

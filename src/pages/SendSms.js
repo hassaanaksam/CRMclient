@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import Footer from '../components/Footer'
+import BASE_URL from '../components/BaseUrl'
 
 export default function SendSms() {
   const { contact } = useParams();
@@ -23,7 +24,7 @@ export default function SendSms() {
 
   const handleSubmit = (values) => {
 
-    axios.post(`${process.env.BASE_URL}/customer/sendsms`, values, {
+    axios.post(`${BASE_URL}/customer/sendsms`, values, {
       headers: {
         "Content-Type": "application/json"
       }

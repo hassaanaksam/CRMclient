@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import Swal from 'sweetalert2';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer'
+import BASE_URL from '../components/BaseUrl'
 
 export default function Singup() {
 
@@ -31,7 +32,7 @@ export default function Singup() {
 
   const handleSubmit = (values) => {
     console.log(values)
-    axios.post(`${process.env.BASE_URL}/user/signup`, values, {
+    axios.post(`${BASE_URL}/user/signup`, values, {
       headers: {
         "Content-Type": "application/json"
       }

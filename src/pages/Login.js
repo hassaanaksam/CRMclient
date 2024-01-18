@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { useState } from 'react';
 import Footer from '../components/Footer'
+import BASE_URL from '../components/BaseUrl'
 
 export default function Login() {
 
@@ -37,7 +38,7 @@ export default function Login() {
   };
 
   const handleSubmit = (values) => {
-    axios.post(`${process.env.BASE_URL}/user/login`, values)
+    axios.post(`${BASE_URL}/user/login`, values)
       .then(res => {
         localStorage.setItem("token", res.data.token);
         if (res.data) {
