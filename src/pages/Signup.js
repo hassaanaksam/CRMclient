@@ -67,19 +67,19 @@ export default function Singup() {
 
               <div className="mb-3">
                 <label htmlFor="name" className="form-label">Name</label>
-                <Field type="text" className="form-control" id="studentName" name="name" />
+                <Field type="text" className="form-control" id="name" name="name" />
                 <ErrorMessage name="name" component="div" className="text-danger" />
               </div>
 
               <div className="mb-3">
                 <label htmlFor="contact" className="form-label">Contact</label>
-                <Field type="text" className="form-control" id="studentName" name="contact" />
+                <Field type="text" className="form-control" id="contact" name="contact" />
                 <ErrorMessage name="contact" component="div" className="text-danger" />
               </div>
 
               <div className="mb-3">
                 <label htmlFor="email" className="form-label">Email</label>
-                <Field type="text" className="form-control" id="studentName" name="email" />
+                <Field type="text" className="form-control" id="email" name="email" />
                 <ErrorMessage name="email" component="div" className="text-danger" />
               </div>
 
